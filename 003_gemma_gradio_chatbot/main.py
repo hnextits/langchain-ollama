@@ -3,12 +3,12 @@ from langchain_community.chat_models import ChatOllama
 import gradio as gr
 
 
-model = ChatOllama(model="gemma:2b-instruct", temperature=0)
+model = ChatOllama(model="lamma3.1", temperature=0)
 
 
 def echo(message, history):
     response = model.invoke(message)
     return response.content
 
-demo = gr.ChatInterface(fn=echo, title="Gemma Bot")
+demo = gr.ChatInterface(fn=echo, title="Llama Bot")
 demo.launch()
